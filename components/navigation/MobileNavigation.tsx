@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { navigation } from "@/content/navigation";
 
@@ -30,8 +29,8 @@ export function MobileNavigation() {
   return <div className="mobile-nav">
     <button ref={buttonRef} className="menu-button" type="button" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}><span>{open ? "Close" : "Menu"}</span><span aria-hidden="true">{open ? "×" : "＋"}</span></button>
     {open && <div id="mobile-menu" ref={panelRef} className="mobile-nav__panel">
-      <nav aria-label="Mobile navigation">{navigation.map((item, index) => <Link key={item.href} href={item.href} onClick={() => setOpen(false)}><span>0{index + 1}</span>{item.label}</Link>)}</nav>
-      <Link className="button button--primary" href="/contact" onClick={() => setOpen(false)}>Plan a hackathon <span aria-hidden="true">↗</span></Link>
+      <nav aria-label="Mobile navigation">{navigation.map((item, index) => <a key={item.href} href={item.href} onClick={() => setOpen(false)}><span>0{index + 1}</span>{item.label}</a>)}</nav>
+      <a className="button button--primary" href="/contact" onClick={() => setOpen(false)}>Plan a hackathon <span aria-hidden="true">↗</span></a>
     </div>}
   </div>;
 }

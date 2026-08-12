@@ -44,6 +44,17 @@ export default defineConfig(async () => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
+    // vinext's client router reads Next-compatible process.env flags. Keep
+    // those references browser-safe while preserving real process.env values
+    // in the server/RSC environments for contact-email configuration.
+    environments: {
+      client: {
+        define: {
+          "process.env": "{}",
+        },
+        keepProcessEnv: false,
+      },
+    },
     server: isCodexSeatbeltSandbox
       ? { watch: { useFsEvents: false, usePolling: true } }
       : undefined,
