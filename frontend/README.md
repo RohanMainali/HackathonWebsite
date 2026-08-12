@@ -33,7 +33,7 @@ Empty testimonials, team, partner, and social arrays are hidden automatically. N
 
 ## Add or replace a hackathon
 
-Edit `content/hackathons.ts`. Each project controls the work archive preview, dynamic case-study route, metadata, facts, gallery, outcomes, and next-project navigation. Replace Hackathon 1, 2, and 3 in that one file. To add a project, duplicate a complete object, choose a unique `slug`, add verified facts, and add its media references.
+Edit `content/hackathons.ts`. Each project controls the work archive preview, dynamic case-study route, metadata, facts, gallery, outcomes, and next-project navigation. To add a project, duplicate a complete object, choose a unique `slug`, add verified facts, and add its media references.
 
 ## Media replacement
 
@@ -42,17 +42,10 @@ The site deliberately displays polished CSS-based editorial placeholders when a 
 Expected replacement layout:
 
 ```text
-public/media/
-  hero-event.webp
-  hero-event.mp4
-  showreel-poster.webp
-  showreel.mp4
-  hackathon-1/cover.webp
-  hackathon-1/gallery-01.webp … gallery-05.webp
-  hackathon-2/cover.webp
-  hackathon-2/gallery-01.webp … gallery-05.webp
-  hackathon-3/cover.webp
-  hackathon-3/gallery-01.webp … gallery-05.webp
+public/images/hackathons/
+  iims-codefest/
+  turboline-iims-2025/
+  iims-perceptron-2026/
 ```
 
 WebP, AVIF, JPEG, and PNG images are supported through `next/image`. Use meaningful alt text for real media.
@@ -81,10 +74,10 @@ Set the real production URL in `content/site.ts`, add the three email environmen
 
 ## Before launch
 
-- [ ] Replace `[COMPANY_NAME]`
-- [ ] Replace `[CONTACT_EMAIL]`
-- [ ] Replace `[PHONE_NUMBER]`
-- [ ] Replace `[LOCATION]`
+- [x] Set company name to `Everest Hacks`
+- [x] Set contact email to `rohanmainali@gmail.com`
+- [x] Set phone number to `+977 9866265252`
+- [x] Set location to `Kathmandu, Nepal`
 - [ ] Replace `https://example.com` with the production domain
 - [ ] Replace all placeholder media
 - [ ] Replace Hackathon 1, 2, and 3

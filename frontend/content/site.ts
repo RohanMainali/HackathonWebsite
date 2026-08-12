@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: "[COMPANY_NAME]",
-  shortName: "HC",
+  name: "Everest Hacks",
+  shortName: "EH",
   tagline: "From first brief to final demo.",
   description:
-    "We help institutions design and deliver high-impact hackathons—from the first brief to the final demo.",
+    "We help institutions design and deliver high-impact hackathons from the first brief to the final demo.",
   contact: {
-    email: "[CONTACT_EMAIL]",
-    phone: "[PHONE_NUMBER]",
-    location: "[LOCATION]",
+    email: "rohanmainali@gmail.com",
+    phone: "+977 9866265252",
+    location: "Kathmandu, Nepal",
   },
   socials: {
     linkedin: "",
@@ -16,11 +16,11 @@ export const siteConfig = {
   },
   heroMedia: {
     type: "image" as "image" | "video",
-    imageSrc: "",
+    imageSrc: "/images/site/home-hero.jpg",
     videoSrc: "",
     posterSrc: "",
-    alt: "Participants collaborating during a hackathon",
-    caption: "Teams building together / Event media placeholder",
+    alt: "A busy hackathon venue with participant teams collaborating around laptops",
+    caption: "",
   },
   showreel: {
     videoSrc: "",

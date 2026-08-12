@@ -11,8 +11,8 @@ const instrument = Instrument_Serif({ variable: "--font-instrument", subsets: ["
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
-  title: { default: `${siteConfig.name} — End-to-End Hackathon Strategy and Production`, template: `%s — ${siteConfig.name}` },
-  description: `${siteConfig.name} helps universities, companies, and institutions design and run successful hackathons, innovation programs, bootcamps, mentorship initiatives, and AI projects.`,
+  title: { default: `${siteConfig.name}: End-to-End Hackathon Strategy and Production`, template: `%s | ${siteConfig.name}` },
+  description: `${siteConfig.name} helps universities, companies and institutions design and run successful hackathons, innovation programs, bootcamps, mentorship initiatives and AI projects.`,
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   manifest: "/manifest.webmanifest",
 };

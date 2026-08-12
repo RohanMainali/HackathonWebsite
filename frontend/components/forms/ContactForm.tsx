@@ -21,7 +21,7 @@ export function ContactForm() {
       const result = await response.json() as { message?: string; errors?: Record<string, string[]> };
       if (!response.ok) { setState({ status: "error", message: result.message, errors: result.errors }); return; }
       setState({ status: "success", message: result.message }); form.reset();
-    } catch { setState({ status: "error", message: "We could not send your inquiry. Your entries are still here—please try again or use the direct email address." }); }
+    } catch { setState({ status: "error", message: "We could not send your inquiry. Your entries are still here. Please try again or use the direct email address." }); }
   }
   const error = (name: string) => state.errors?.[name]?.[0];
   return <form className="contact-form" onSubmit={submit} noValidate>
