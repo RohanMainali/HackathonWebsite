@@ -70,7 +70,7 @@ The API validates requests server-side with Zod, uses a honeypot, and sends thro
 
 ## Deploy
 
-Set the real production URL in `content/site.ts`, add the three email environment variables to the hosting environment, run the production build, and deploy. For Vercel, import the repository, keep the framework defaults, and configure the same variables in Project Settings → Environment Variables.
+Set the real production URL in `content/site.ts`, add the three email environment variables to the hosting environment, run the production build and deploy. For Vercel, set the project root directory to `frontend`; the included `vercel.json` supplies the correct build command and generates Vercel Build Output API files. Leave the Output Directory override empty. Configure the same variables in Project Settings → Environment Variables.
 
 ## Before launch
 

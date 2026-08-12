@@ -23,12 +23,12 @@ export const siteConfig = {
     caption: "",
   },
   showreel: {
-    videoSrc: "",
-    posterSrc: "",
-    caption: "Event showreel placeholder",
-    placeholder: true,
+    videoSrc: "/images/site/showreel.mp4",
+    posterSrc: "/images/site/showreel-poster.jpg",
+    caption: "Inside the hackathon",
+    placeholder: false,
   },
-  baseUrl: "https://example.com",
+  baseUrl: "https://everesthacks.vercel.app",
   mainCta: { label: "Plan a hackathon", href: "/contact" },
   secondaryCta: { label: "See our work", href: "/work" },
 } as const;
