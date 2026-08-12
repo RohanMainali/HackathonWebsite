@@ -125,7 +125,7 @@ em { font-family: var(--font-serif); font-weight: 400; }
 .process-timeline li { position: relative; padding: 34px 24px 10px 0; }
 .process-timeline li::before { content: ""; position: absolute; width: 11px; height: 11px; top: -6px; left: 0; background: var(--orange); border-radius: 50%; }
 .process-timeline li:not(:last-child)::after { content: ""; position: absolute; top: -1px; left: 11px; right: 0; height: 1px; background: var(--blue); }
-.process-number { display: block; margin-bottom: clamp(60px, 8vw, 110px); color: var(--orange); font-size: .75rem; font-weight: 800; }
+.process-number { display: block; margin-bottom: clamp(24px, 2.5vw, 40px); color: var(--orange); font-size: .75rem; font-weight: 800; }
 .process-timeline h3 { margin: 0 0 14px; font-size: 1.4rem; }
 .process-timeline p { margin: 0; color: #b9b9b3; font-size: .9rem; line-height: 1.55; }
 .process-section .text-link { border-color: white; }
