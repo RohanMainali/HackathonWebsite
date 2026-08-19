@@ -25,4 +25,13 @@ export const engagementModels = [
   { title: "End-to-End Partner", description: "We coordinate the complete program from concept and communications through event operations and post-event reporting." },
 ];
 
-export const eventFormats = ["In-person", "Hybrid", "Online", "Internal employee hackathon", "Open community hackathon", "University hackathon", "Innovation challenge", "Multi-stage program"];
+export const eventFormats = [
+  "Physical",
+  "Hybrid",
+  "Online",
+  "Corporate hackathon",
+  "Open community hackathon",
+  "Intercollege hackathon",
+  "Innovation challenge",
+  "Intracollege hackathon",
+];

@@ -1,9 +1,9 @@
-# EverestHack
+# Amatrix Labs
 
 This repository is split into independent frontend and backend workspaces.
 
 ```text
-EverestHack/
+HackathonWebsite/
 ├── frontend/   Website and contact API currently used by the marketing site
 └── backend/    Reserved for the future FastAPI service
 ```

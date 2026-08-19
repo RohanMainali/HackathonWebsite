@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Everest Hacks",
-  shortName: "EH",
+  name: "Amatrix Labs",
+  shortName: "AL",
   tagline: "From first brief to final demo.",
   description:
     "We help institutions design and deliver high-impact hackathons from the first brief to the final demo.",
