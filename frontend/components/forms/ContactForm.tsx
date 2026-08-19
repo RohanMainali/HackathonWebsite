@@ -4,9 +4,9 @@ import { useState, type FormEvent } from "react";
 
 type FormState = { status: "idle" | "loading" | "success" | "error"; message?: string; errors?: Record<string, string[]> };
 const orgTypes = ["University or college", "Company", "Government body", "NGO", "Technology community", "Other"];
-const programTypes = ["University hackathon", "Internal company hackathon", "Open innovation challenge", "AI hackathon", "Multi-stage innovation program", "Bootcamp or workshop", "Mentorship program", "AI consulting", "Not sure yet"];
-const formats = ["In-person", "Hybrid", "Online", "Not decided"];
-const serviceOptions = ["Strategy and format", "Branding and website", "Sponsors and partners", "Participant outreach", "Workshops and bootcamps", "Mentors and judges", "Event production", "Judging and submissions", "Post-event support", "AI consulting"];
+const programTypes = ["Intercollege hackathon", "Intracollege hackathon", "Corporate hackathon", "Sports Analytics Sprint 2", "Unconference", "Research & Prototyping", "IoT / Robotics project", "Technical training & bootcamps", "AI consulting", "Not sure yet"];
+const formats = ["Physical", "Hybrid", "Online", "Not decided"];
+const serviceOptions = ["End-to-End hackathon", "Research & development", "IoT & smart devices", "Robotics & automation", "Technical training & bootcamps", "Resource & tech stack guide", "Unconference", "Branding & website", "Sponsors & partners", "AI consulting"];
 
 export function ContactForm() {
   const [state, setState] = useState<FormState>({ status: "idle" });

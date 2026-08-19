@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "AL",
   tagline: "From first brief to final demo.",
   description:
-    "We help institutions design and deliver high-impact hackathons from the first brief to the final demo.",
+    "We help institutions design and deliver high-impact hackathons, applied research, IoT, robotics, and hands-on technical training from the first brief to the final demo.",
   contact: {
     email: "rohanmainali@gmail.com",
     phone: "+977 9866265252",
