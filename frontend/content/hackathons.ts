@@ -92,11 +92,11 @@ export const hackathons: Hackathon[] = [
     audience: "Student coders, designers and data enthusiasts from 8 nations and 19 institutions",
     location: "Kathmandu + virtual participation",
     summary: "A 72-hour international innovation sprint where 57 teams built AI-powered ideas for sports, media, broadcasting and data intelligence.",
-    brief: "Turboline AI set out to connect education with real industry problems at the intersection of artificial intelligence, sports and media. The challenge invited student teams across Asia to explore better fan experiences, athlete analysis, broadcast intelligence, automated commentary, sports journalism and referee decision support.",
+    brief: "Turboline set out to connect education with real industry problems at the intersection of artificial intelligence, sports and media. The challenge invited student teams across Asia to explore better fan experiences, athlete analysis, broadcast intelligence, automated commentary, sports journalism and referee decision support.",
     approach: "The hybrid program brought onsite and international teams into one three-day journey. Opening programming established the challenge while mentors supported continuous build rounds. An expert session expanded the teams’ thinking around AI research and midpoint presentations narrowed 57 teams to a Top 10. The final day combined technical review, submission, live demos, judging and awards.",
     capabilities: ["International participant outreach", "Hybrid event infrastructure", "Challenge and theme framing", "Opening program", "Mentor rounds", "Expert speaker session", "Three-day participant experience", "Midpoint presentations", "Finalist selection", "Submission and judging workflow", "Awards and recognition", "Hospitality and event operations"],
     timeline: [
-      { label: "Launch & registration", description: "Teams registered, met across institutions and nations then entered the challenge through an opening program with Turboline AI." },
+      { label: "Launch & registration", description: "Teams registered, met across institutions and nations then entered the challenge through an opening program with Turboline." },
       { label: "Day 1: Build", description: "Teams moved from ideas to early models and wireframes while mentors circulated across the hackathon floor." },
       { label: "Day 2: Mentorship", description: "Focused mentor rounds, debugging, design and core-feature development helped every team sharpen its direction." },
       { label: "Expert perspective", description: "Dr. Bal Krishna Bal joined for a session on innovation, research and the future of artificial intelligence." },

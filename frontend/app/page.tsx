@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/content/site";
-import { partners } from "@/content/partners";
 import { hackathons } from "@/content/hackathons";
 import { services } from "@/content/services";
 import { testimonials } from "@/content/testimonials";
@@ -30,7 +29,17 @@ export default function HomePage() {
     <section className="hero">
       <div className="hero__media"><HeroMedia media={siteConfig.heroMedia} /></div>
       <div className="hero__wash" />
-      <Container className="hero__content"><p className="eyebrow">HACKATHON STRATEGY / PRODUCTION / COMMUNITY</p><h1>From first brief<br />to final <em>demo.</em></h1><p className="hero__intro">We design and run high-impact hackathons for institutions, companies and communities. We bring together the strategy, people, production and follow-through needed to make the event work.</p>        <div className="cta-row">
+      <Container className="hero__content">
+        <p className="eyebrow">HACKATHON STRATEGY / PRODUCTION / COMMUNITY</p>
+        <h1>
+          From first brief
+          <br />
+          to final <em>demo.</em>
+        </h1>
+        <p className="hero__intro">
+          We design and deliver premier hackathons, applied research, AI consulting, and unconferences—combining strategy, technical depth, and complete production.
+        </p>
+        <div className="cta-row">
           <ButtonLink href="/contact">Plan a hackathon</ButtonLink>
           <ButtonLink href="/work" variant="secondary">
             See our work
