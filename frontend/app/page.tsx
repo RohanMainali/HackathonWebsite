@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/content/site";
-import { partners } from "@/content/partners";
 import { hackathons } from "@/content/hackathons";
 import { services } from "@/content/services";
 import { testimonials } from "@/content/testimonials";
@@ -30,10 +29,38 @@ export default function HomePage() {
     <section className="hero">
       <div className="hero__media"><HeroMedia media={siteConfig.heroMedia} /></div>
       <div className="hero__wash" />
-      <Container className="hero__content"><p className="eyebrow">HACKATHON STRATEGY / PRODUCTION / COMMUNITY</p><h1>From first brief<br />to final <em>demo.</em></h1><p className="hero__intro">We design and run high-impact hackathons for institutions, companies and communities. We bring together the strategy, people, production and follow-through needed to make the event work.</p><div className="cta-row"><ButtonLink href="/contact">Plan a hackathon</ButtonLink><ButtonLink href="/work" variant="light">See our work</ButtonLink></div><p className="hero__proof">National and international experience <span>·</span> In-person, hybrid and online</p></Container>
+      <Container className="hero__content">
+        <p className="eyebrow">HACKATHON STRATEGY / PRODUCTION / COMMUNITY</p>
+        <h1>
+          From first brief
+          <br />
+          to final <em>demo.</em>
+        </h1>
+        <p className="hero__intro">
+          We design and deliver premier hackathons, applied research, AI consulting, and unconferences—combining strategy, technical depth, and complete production.
+        </p>
+        <div className="cta-row">
+          <ButtonLink href="/contact">Plan a hackathon</ButtonLink>
+          <ButtonLink href="/work" variant="secondary">
+            See our work
+          </ButtonLink>
+        </div>
+        <p className="hero__proof">
+          National and international experience <span>·</span> Physical, hybrid and online
+        </p>
+      </Container>
     </section>
 
-    <section className="credibility-strip"><Container><p>Built from experience across national and international hackathons.</p><div className="audience-strip">{audiences.map((audience) => <span key={audience}>{audience}</span>)}</div>{partners.length > 0 && <div className="partner-row">{partners.map((partner) => <a key={partner.name} href={partner.href || "#"}>{partner.name}</a>)}</div>}</Container></section>
+    <section className="credibility-strip">
+      <Container>
+        <p>Built from experience across national and international hackathons.</p>
+        <div className="audience-strip">
+          {audiences.map((audience) => (
+            <span key={audience}>{audience}</span>
+          ))}
+        </div>
+      </Container>
+    </section>
 
     <section className="section why-section"><Container><div className="why-grid"><div><SectionHeader index="01 /" eyebrow="WHY IT WORKS" title="A great hackathon is designed long before the opening ceremony." /><p className="large-copy">The room may come alive over one weekend, but the work begins much earlier. A clear purpose, useful problem statements, the right participants, prepared mentors, reliable operations and a fair judging process all shape the result.</p><ol className="outcome-lines"><li>People know why they are there.</li><li>Partners know what success looks like.</li><li>Promising ideas have somewhere to go next.</li></ol></div><MediaFrame {...hackathons[0].gallery[1]} /></div></Container></section>
 
