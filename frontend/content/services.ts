@@ -30,6 +30,10 @@ export const services = [
     description: "Focused AI discovery, custom model development, computer vision, natural language processing, and technical consulting connected to real institutional problems.",
   },
   {
+    title: "Unconferences",
+    description: "Participant-driven open gatherings where the agenda is shaped by attendees themselves—community-led sessions, lightning talks and open discussions designed around real conversations instead of fixed schedules.",
+  },
+  {
     title: "Hackathon Advisory",
     description: "For teams that already have internal organizers but need a battle-tested playbook, expert review, templates, and strategic guidance.",
   },
