@@ -75,7 +75,7 @@ Set the real production URL in `content/site.ts`, add the three email environmen
 ## Before launch
 
 - [x] Set company name to `Amatrix Labs`
-- [x] Set contact email to `rohanmainali@gmail.com`
+- [x] Set contact email to `contact@amatrixlabs.com`
 - [x] Set phone number to `+977 9866265252`
 - [x] Set location to `Kathmandu, Nepal`
 - [ ] Replace `https://example.com` with the production domain
