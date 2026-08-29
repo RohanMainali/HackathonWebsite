@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
   title: { default: `${siteConfig.name}: End-to-End Hackathon Strategy and Production`, template: `%s | ${siteConfig.name}` },
   description: `${siteConfig.name} helps universities, companies and institutions design and run successful hackathons, innovation programs, bootcamps, mentorship initiatives and AI projects.`,
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: { icon: { url: "/favicon.png", type: "image/png" }, shortcut: "/favicon.png" },
   manifest: "/manifest.webmanifest",
 };
 
