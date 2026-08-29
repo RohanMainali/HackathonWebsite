@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "We help institutions design and deliver high-impact hackathons, applied research, IoT, robotics, and hands-on technical training from the first brief to the final demo.",
   contact: {
-    email: "rohanmainali@gmail.com",
+    email: "contact@amatrixlabs.com",
     phone: "+977 9866265252",
     location: "Kathmandu, Nepal",
   },
