@@ -53,7 +53,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
       <CaseStudyGallery items={project.gallery} />
     </Container></section>
     {project.video && <section className="section"><Container><VideoLightbox src={project.video.src} poster={project.video.poster} caption={project.video.caption} /></Container></section>}
-    <section className="section outcomes-section"><Container><div className="case-section-heading"><p className="eyebrow">06 / OUTCOMES</p><h2>What the program made possible.</h2></div><div className="outcomes-grid">{project.outcomes.map((outcome, index) => <article key={outcome.title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{outcome.title}</h3><p>{outcome.description}</p></article>)}</div></Container></section>
+    <section className="section outcomes-section"><Container><div className="case-section-heading"><p className="eyebrow">06 / OUTCOMES</p><h2>What the program made possible.</h2></div><div className="outcomes-grid">{project.outcomes.map((outcome, index) => <article key={outcome.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{outcome.title}</h3><p>{outcome.description}</p></div></article>)}</div></Container></section>
     {project.testimonial && <section className="section"><Container><blockquote>{project.testimonial.quote}</blockquote><p>{project.testimonial.name}, {project.testimonial.organization}</p></Container></section>}
     <NextProject project={next} /><FinalCTA />
   </main>;
