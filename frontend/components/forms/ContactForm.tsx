@@ -275,8 +275,8 @@ export function ContactForm() {
           type="submit"
           disabled={state.status === "loading"}
         >
-          {state.status === "loading" ? "Sending inquiry..." : "Send inquiry"}
-          <span aria-hidden="true">→</span>
+          <span>{state.status === "loading" ? "Sending inquiry..." : "Send inquiry"}</span>
+          <span aria-hidden="true" className="button__arrow">→</span>
         </button>
         <p className="form-privacy-note">
           We respect your privacy and will only use this information to respond to your inquiry.
@@ -344,20 +344,36 @@ function SelectField({
       <span className="field__label">
         {label} {required && <b aria-hidden="true">*</b>}
       </span>
-      <select
-        id={name}
-        name={name}
-        defaultValue=""
-        aria-invalid={!!error}
-        aria-describedby={error ? `${name}-error` : undefined}
-      >
-        <option value="">{placeholder}</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
+      <div className="field__select-wrap">
+        <select
+          id={name}
+          name={name}
+          defaultValue=""
+          aria-invalid={!!error}
+          aria-describedby={error ? `${name}-error` : undefined}
+        >
+          <option value="">{placeholder}</option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        <span className="field__select-arrow" aria-hidden="true">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </span>
+      </div>
       {error && (
         <small id={`${name}-error`} className="field-error">
           {error}
