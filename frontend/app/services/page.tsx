@@ -7,7 +7,7 @@ import { ServiceMap } from "@/components/sections/ServiceMap";
 import { EngagementModels } from "@/components/sections/EngagementModels";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
-export const metadata: Metadata = pageMetadata("Hackathon Services", "Complete hackathon delivery with co-production, advisory, workshops, mentorship, incubation and focused AI consulting.", "/services");
+export const metadata: Metadata = pageMetadata("Hackathon Services", "Complete hackathon delivery with co-production, advisory, workshops, mentorship, unconferences and focused AI consulting.", "/services");
 
 export default function ServicesPage() {
   return <main id="main-content">
