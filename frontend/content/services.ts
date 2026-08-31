@@ -26,6 +26,10 @@ export const services = [
     description: "Curated technical architectures, starter templates, benchmark datasets, API toolchains, and comprehensive stack roadmaps to unblock builders and accelerate development.",
   },
   {
+    title: "Unconference",
+    description: "Participant-driven open format gatherings, spontaneous breakout circles, lightning talks, and collaborative problem-solving sessions designed for community exchange and organic innovation.",
+  },
+  {
     title: "AI Consulting",
     description: "Focused AI discovery, custom model development, computer vision, natural language processing, and technical consulting connected to real institutional problems.",
   },
