@@ -69,9 +69,10 @@ em { font-family: var(--font-serif); font-weight: 400; }
 .text-link:hover span { transform: translateX(4px); }
 .cta-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
 
-.site-header { position: fixed; z-index: 100; inset: 0 0 auto; height: 78px; border-bottom: 1px solid rgba(21,21,21,.1); background: rgba(246,244,238,.56); box-shadow: 0 8px 30px rgba(21,21,21,0); backdrop-filter: blur(18px) saturate(120%); -webkit-backdrop-filter: blur(18px) saturate(120%); pointer-events: none; transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.site-header { position: fixed; z-index: 100; inset: 0 0 auto; height: 78px; border-bottom: 1px solid rgba(21,21,21,.1); background: rgba(246,244,238,.56); box-shadow: 0 8px 30px rgba(21,21,21,0); backdrop-filter: blur(18px) saturate(120%); -webkit-backdrop-filter: blur(18px) saturate(120%); pointer-events: none; transform: translateY(0); transition: transform 240ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
 .site-header__inner { width: min(100% - 48px, 1280px); height: 100%; margin-inline: auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; pointer-events: auto; }
 .site-header.is-scrolled { border-color: rgba(21,21,21,.15); background: rgba(246,244,238,.9); box-shadow: 0 8px 30px rgba(21,21,21,.09); }
+.site-header.is-hidden { transform: translateY(-100%); }
 .brand { display: inline-flex; align-items: center; justify-self: start; }
 .brand__logo { width: clamp(142px, 14vw, 174px); height: auto; }
 .desktop-nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 34px); font-size: .76rem; font-weight: 750; }
@@ -841,6 +842,7 @@ em { font-family: var(--font-serif); font-weight: 400; }
   .gallery-item { display: block; width: 100%; margin: 0 0 28px !important; }
   .outcomes-grid { grid-template-columns: 1fr; }
   .next-project .media-frame__visual { aspect-ratio: 4 / 3; }
+  .next-project__title { left: 18px; bottom: 32px; max-width: calc(100% - 36px); font-size: clamp(2.25rem, 11vw, 4rem); overflow-wrap: anywhere; }
   .form-grid { grid-template-columns: 1fr; gap: 16px; }
   .field input, .field select, .field textarea { font-size: 16px; }
   .contact-hero { padding: 104px 0 46px; }
