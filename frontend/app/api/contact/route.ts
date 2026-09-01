@@ -20,7 +20,8 @@ export async function POST(request: Request) {
       return Response.json({ message: "Email delivery is not configured. Please use the direct email address instead." }, { status: 503 });
     }
 
-    const safe = (value: string) => value.replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char] || char);
+    const safe = (value?: string | null) =>
+      value ? value.replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char] || char) : "Not specified";
     const data = parsed.data;
     const email = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -29,12 +30,26 @@ export async function POST(request: Request) {
         from,
         to: [to],
         reply_to: data.email,
-        subject: `Hackathon inquiry from ${data.organization}`,
-        html: `<h1>New hackathon inquiry</h1><p><strong>Name:</strong> ${safe(data.fullName)}</p><p><strong>Email:</strong> ${safe(data.email)}</p><p><strong>Organization:</strong> ${safe(data.organization)}</p><p><strong>Role:</strong> ${safe(data.role)}</p><p><strong>Program:</strong> ${safe(data.programType)}</p><p><strong>Format:</strong> ${safe(data.format)}</p><p><strong>Target:</strong> ${safe(data.targetDate)}</p><p><strong>Services:</strong> ${data.services.map(safe).join(", ")}</p><p><strong>Description:</strong></p><p>${safe(data.description).replace(/\n/g, "<br>")}</p>`,
+        subject: `Inquiry from ${data.organization || data.fullName}`,
+        html: `<h1>New inquiry received</h1>
+<p><strong>Name:</strong> ${safe(data.fullName)}</p>
+<p><strong>Email:</strong> ${safe(data.email)}</p>
+<p><strong>Phone:</strong> ${safe(data.phone)}</p>
+<p><strong>Organization:</strong> ${safe(data.organization)}</p>
+<p><strong>Role:</strong> ${safe(data.role)}</p>
+<p><strong>Program Type:</strong> ${safe(data.programType)}</p>
+<p><strong>Format:</strong> ${safe(data.format)}</p>
+<p><strong>Expected Participants:</strong> ${safe(data.participants)}</p>
+<p><strong>Target Timeline:</strong> ${safe(data.targetDate)}</p>
+<p><strong>Location:</strong> ${safe(data.location)}</p>
+<p><strong>Services:</strong> ${data.services && data.services.length > 0 ? data.services.map((s) => safe(s)).join(", ") : "Not specified"}</p>
+<p><strong>Referral:</strong> ${safe(data.referral)}</p>
+<p><strong>Description:</strong></p>
+<p>${safe(data.description).replace(/\n/g, "<br>")}</p>`,
       }),
     });
     if (!email.ok) return Response.json({ message: "We could not send your inquiry. Please try again or use the direct email address." }, { status: 502 });
-    return Response.json({ message: "Thank you. Your inquiry has been sent and the team will respond using your work email." });
+    return Response.json({ message: "Thank you. Your inquiry has been sent and the team will respond using your email." });
   } catch {
     return Response.json({ message: "We could not process this request. Please check the form and try again." }, { status: 400 });
   }
