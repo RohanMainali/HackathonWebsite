@@ -44,7 +44,7 @@ export default function HomePage() {
                 </svg>
               </a>
               <a className="hero-work-link" href="/work">
-                Explore our work <span aria-hidden="true">↗</span>
+                Explore our work
               </a>
             </div>
             <p className="innovation-hero__signature">
@@ -91,9 +91,7 @@ export default function HomePage() {
                   alt={item.alt}
                   loading="lazy"
                 />
-                <span>
-                  0{i + 1} <b>↗</b>
-                </span>
+                <span>0{i + 1}</span>
               </div>
               <h3>{item.title}</h3>
               <p>
@@ -112,7 +110,6 @@ export default function HomePage() {
                   : i === 1
                     ? "the community"
                     : "collaboration"}{" "}
-                ↗
               </span>
             </a>
           ))}
@@ -139,7 +136,7 @@ export default function HomePage() {
               response and resilience.
             </p>
             <a className="button button--secondary" href="/upcoming">
-              Explore Lifeline Nepal <span>↗</span>
+              Explore Lifeline Nepal
             </a>
           </div>
         </div>
@@ -153,7 +150,7 @@ export default function HomePage() {
             <em>Experiences shared.</em>
           </h2>
           <a className="inline-link" href="/work">
-            Explore all our work ↗
+            Explore all our work
           </a>
         </div>
         <div className="selected-work-home__grid">
@@ -179,9 +176,7 @@ export default function HomePage() {
                 <p className="eyebrow">
                   {project.year} · {project.format}
                 </p>
-                <h3>
-                  {project.title} <span aria-hidden="true">↗</span>
-                </h3>
+                <h3>{project.title}</h3>
                 <p>{project.summary}</p>
               </a>
             ))}
@@ -190,8 +185,8 @@ export default function HomePage() {
       <EngagementModels />
       <section className="join-band container">
         <p>Better, together.</p>
-        <a href="/partners">Become a partner ↗</a>
-        <a href="/sponsors">Support an initiative ↗</a>
+        <a href="/partners">Become a partner</a>
+        <a href="/sponsors">Support an initiative</a>
       </section>
       <FinalCTA />
     </main>

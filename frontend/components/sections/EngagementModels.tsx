@@ -22,13 +22,12 @@ export function EngagementModels() {
               <span>0{i + 1}</span>
               <h3>{name}</h3>
               <p>{copy}</p>
-              <b aria-hidden="true">↗</b>
             </a>
           ))}
         </div>
         <p className="quiet-link">
           Need help with a technical challenge?{" "}
-          <a href="/technology">Explore AI & technology consulting ↗</a>
+          <a href="/technology">Explore AI & technology consulting</a>
         </p>
       </div>
     </section>

@@ -21,7 +21,6 @@ export function SiteFooter() {
             href={`mailto:${siteConfig.contact.email}`}
           >
             {siteConfig.contact.email}
-            <span aria-hidden="true">↗</span>
           </a>
         </div>
         <div className="studio-footer__main">
@@ -62,7 +61,7 @@ export function SiteFooter() {
             <a href="/contact">Contact</a>
             {socials.map(([name, href]) => (
               <a href={href} key={name} target="_blank" rel="noreferrer">
-                {name} ↗
+                {name}
               </a>
             ))}
           </nav>

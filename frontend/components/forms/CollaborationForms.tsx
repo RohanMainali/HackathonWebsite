@@ -230,7 +230,6 @@ function CollaborationForm({ type }: { type: "partner" | "sponsor" }) {
           {busy
             ? "Sending…"
             : `Send ${sponsor ? "sponsorship" : "partnership"} enquiry`}
-          <span aria-hidden="true">→</span>
         </button>
       </div>
       <p className="privacy-note">

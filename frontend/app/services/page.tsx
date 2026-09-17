@@ -18,7 +18,7 @@ export default function Page() {
             </div>
             <h2>{p.title}</h2>
             <p>{p.copy}</p>
-            <span>Explore ↗</span>
+            <span>Explore</span>
           </a>
         ))}
       </section>

@@ -10,7 +10,7 @@ export function PillarPage({ slug }: { slug: string }) {
         <h1>{item.headline}</h1>
         <p>{item.copy}</p>
         <a className="button button--primary" href="#start">
-          {item.actions[0]} ↗
+          {item.actions[0]}
         </a>
         <Image width={1400} height={850} src={item.image} alt={item.alt} />
       </section>
@@ -35,15 +35,15 @@ export function PillarPage({ slug }: { slug: string }) {
           {slug === "hackathons" && (
             <>
               <a className="inline-link" href="/upcoming">
-                Explore upcoming events ↗
+                Explore upcoming events
               </a>
               <a className="inline-link" href="/sponsors">
-                Sponsor an event ↗
+                Sponsor an event
               </a>
             </>
           )}
           <a className="inline-link" href="/partners">
-            Partner with us ↗
+            Partner with us
           </a>
         </div>
         <InquiryFlow kind={slug} />

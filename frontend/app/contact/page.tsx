@@ -28,21 +28,17 @@ export default function Page() {
             className="contact-pathways"
             aria-label="Other ways to work together"
           >
-            <a href="/partners">
-              Become a partner <span aria-hidden="true">↗</span>
-            </a>
-            <a href="/sponsors">
-              Become a sponsor <span aria-hidden="true">↗</span>
-            </a>
+            <a href="/partners">Become a partner</a>
+            <a href="/sponsors">Become a sponsor</a>
             <a href="/hackathons?intent=Host%20a%20Hackathon#start">
-              Plan an event <span aria-hidden="true">↗</span>
+              Plan an event
             </a>
           </nav>
           <a className="inline-link" href="/work">
-            See our past collaborations ↗
+            See our past collaborations
           </a>
           <a className="inline-link" href="mailto:contact@amatrixlabs.com">
-            contact@amatrixlabs.com ↗
+            contact@amatrixlabs.com
           </a>
         </aside>
         <InquiryFlow kind="custom" />

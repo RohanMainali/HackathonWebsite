@@ -1294,3 +1294,113 @@ h3 {
     gap: 16px;
   }
 }
+
+/* Calmer navigation and section rhythm: space and tone replace repeated rules. */
+.site-header,
+.site-header.is-scrolled,
+.innovation-hero,
+.page-hero,
+.contact-hero,
+.upcoming-hero {
+  border-bottom: 0;
+}
+
+.pillar-link,
+.text-link,
+.email-link,
+.footer-email {
+  border-bottom: 0;
+  text-decoration: none;
+}
+
+.pillar-link,
+.inline-link,
+.hero-work-link,
+.quiet-link a {
+  text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 28%, transparent);
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
+}
+
+.engage-list {
+  display: grid;
+  gap: 8px;
+}
+
+.engage-list > a {
+  grid-template-columns: 55px 1fr 1.5fr;
+  border: 0;
+  border-radius: 12px;
+  padding: 20px 18px;
+  background: color-mix(in srgb, var(--paper-bright) 62%, transparent);
+}
+
+.engage-list > a:last-child {
+  border-bottom: 0;
+}
+
+.join-band {
+  border-top: 0;
+  border-radius: 14px;
+  padding-inline: 22px;
+  background: #eef2e9;
+}
+
+.workflow,
+.studio-footer__lead,
+.studio-footer__bottom,
+.sponsor-tag-rows,
+.sponsor-tag-row,
+.benefit-list li {
+  border: 0;
+}
+
+.sponsor-tag-rows {
+  display: grid;
+  gap: 10px;
+}
+
+.sponsor-tag-row {
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: #f0f3eb;
+}
+
+.contact-pathways {
+  display: grid;
+  gap: 8px;
+  border: 0;
+}
+
+.contact-pathways a {
+  border: 0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #eef2e9;
+}
+
+.case-preview,
+.case-meta,
+.site-footer__bottom {
+  border: 0;
+}
+
+.mobile-nav__panel nav a {
+  border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .engage-list > a {
+    grid-template-columns: 25px 1fr;
+    padding: 18px 10px;
+  }
+
+  .engage-list > a p {
+    grid-column: 2;
+  }
+
+  .join-band {
+    padding: 22px 18px;
+  }
+}

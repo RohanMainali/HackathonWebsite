@@ -267,7 +267,6 @@ export function InquiryFlow({ kind = "custom" }: { kind?: string }) {
           type="submit"
         >
           {busy ? "Sending…" : "Send message"}
-          <span aria-hidden="true">→</span>
         </button>
       </div>
       <p className="privacy-note">

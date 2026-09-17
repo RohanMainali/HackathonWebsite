@@ -55,10 +55,10 @@ export default function Page() {
             <li>Build relationships beyond a single event.</li>
           </ul>
           <a className="inline-link" href="/work">
-            See our past collaborations ↗
+            See our past collaborations
           </a>
           <a className="inline-link" href="mailto:contact@amatrixlabs.com">
-            contact@amatrixlabs.com ↗
+            contact@amatrixlabs.com
           </a>
         </aside>
         <SponsorForm />
