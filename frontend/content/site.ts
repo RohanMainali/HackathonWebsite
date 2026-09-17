@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Amatrix Labs",
   shortName: "AL",
-  tagline: "From first brief to final demo.",
+  tagline: "Ideas. People. Impact.",
   description:
-    "We help institutions design and deliver high-impact hackathons, applied research, IoT, robotics, and hands-on technical training from the first brief to the final demo.",
+    "We bring ideas and people together through ideathons and hackathons, speakers and community, research and innovation.",
   contact: {
     email: "contact@amatrixlabs.com",
     phone: "+977 9866265252",

@@ -38,7 +38,7 @@ export function SiteHeader() {
     <div className="site-header__inner">
       <a href="/" className="brand" aria-label={`${siteConfig.name} home`}><Image className="brand__logo" src="/images/site/logo.webp" alt="" width={1421} height={278} priority /></a>
       <nav className="desktop-nav" aria-label="Primary navigation">{navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</nav>
-      <a className="header-cta" href="/contact">Plan a hackathon <span aria-hidden="true">↗</span></a>
+      <a className="header-cta" href="/contact">Work With Us <span aria-hidden="true">↗</span></a>
       <MobileNavigation />
     </div>
   </header>;

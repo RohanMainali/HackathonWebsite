@@ -1,0 +1,47 @@
+export const pillars = [
+  {
+    slug: "hackathons",
+    title: "Ideathon & Hackathon",
+    headline: "Make room for the next big idea.",
+    copy: "Structured innovation programs that bring people together to explore, build and test what’s possible.",
+    image: "/images/hackathons/turboline-iims-2025/team-collaboration.jpg",
+    alt: "Hackathon participants collaborating on a project",
+    actions: [
+      "Host a Hackathon",
+      "Host an Ideathon",
+      "Participate in an event",
+      "Custom event",
+    ],
+    workflow: ["Idea", "Planning", "Community", "Event", "Outcomes"],
+  },
+  {
+    slug: "speakers",
+    title: "Speakers & Community",
+    headline: "Good conversations move us forward.",
+    copy: "Connect your audience with researchers, founders and practitioners who have something meaningful to share.",
+    image: "/images/hackathons/iims-perceptron-2026/expert-keynote.jpg",
+    alt: "An expert sharing ideas with a community audience",
+    actions: [
+      "Invite a Speaker",
+      "Apply as a Speaker",
+      "Organize a Community Session",
+      "Pitch a talk",
+    ],
+    workflow: ["Topic", "Speaker", "Audience", "Session", "Community"],
+  },
+  {
+    slug: "research",
+    title: "Research & Innovation",
+    headline: "Curiosity, put to work.",
+    copy: "Bring a question worth exploring. Together, we turn research and experimentation into practical next steps.",
+    image: "/images/hackathons/iims-codefest/collaboration.jpg",
+    alt: "Students and a mentor reviewing an experimental project",
+    actions: [
+      "Start a Research Collaboration",
+      "Propose a Research Idea",
+      "Request research support",
+      "Pitch an innovation project",
+    ],
+    workflow: ["Problem", "Research", "Experiment", "Findings", "Deployment"],
+  },
+];
