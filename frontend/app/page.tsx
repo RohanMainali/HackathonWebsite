@@ -1,84 +1,194 @@
+import Image from "next/image";
 import type { Metadata } from "next";
-import { siteConfig } from "@/content/site";
 import { hackathons } from "@/content/hackathons";
-import { services } from "@/content/services";
-import { testimonials } from "@/content/testimonials";
-import { Container } from "@/components/ui/Container";
-import { ButtonLink, TextLink } from "@/components/ui/ButtonLink";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { MediaFrame } from "@/components/media/MediaFrame";
-import { HeroMedia } from "@/components/media/HeroMedia";
-import { VideoLightbox } from "@/components/media/VideoLightbox";
-import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
-import { CaseStudyPreview } from "@/components/sections/CaseStudyPreview";
+import { pillars } from "@/content/pillars";
 import { EngagementModels } from "@/components/sections/EngagementModels";
-import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-
-export const metadata: Metadata = { title: { absolute: `${siteConfig.name}: End-to-End Hackathon Strategy and Production` }, description: siteConfig.description };
-
+export const metadata: Metadata = {
+  title: "AMatrix Labs — Ideas, people, possibilities",
+  description:
+    "Ideathons and hackathons. Speakers and community. Research and innovation. Find your next collaboration with AMatrix Labs.",
+};
 export default function HomePage() {
-  const audiences = ["Universities", "Companies", "Public institutions", "Technology communities"];
-  const audienceDetails = [
-    ["Universities and Colleges", "Build student communities, connect learning with practice and strengthen industry engagement."],
-    ["Companies", "Engage developers, explore real use cases, identify talent and generate prototypes."],
-    ["Government and NGOs", "Bring multidisciplinary teams together around public-interest and mission-driven challenges."],
-    ["Technology Communities", "Create inclusive builder experiences that help communities learn, connect and ship."],
-  ];
-  return <main id="main-content">
-    <section className="hero">
-      <div className="hero__media"><HeroMedia media={siteConfig.heroMedia} /></div>
-      <div className="hero__wash" />
-      <Container className="hero__content">
-        <p className="eyebrow">HACKATHON STRATEGY / PRODUCTION / COMMUNITY</p>
-        <h1>
-          From first brief
-          <br />
-          to final <em>demo.</em>
-        </h1>
-        <p className="hero__intro">
-          We design and deliver premier hackathons, applied research, AI consulting, and unconferences—combining strategy, technical depth, and complete production.
-        </p>
-        <div className="cta-row">
-          <ButtonLink href="/contact">Plan a hackathon</ButtonLink>
-          <ButtonLink href="/work" variant="secondary">
-            See our work
-          </ButtonLink>
+  return (
+    <main id="main-content">
+      <section className="innovation-hero">
+        <div className="container innovation-hero__inner">
+          <div className="innovation-hero__copy">
+            <p className="eyebrow">PEOPLE. IDEAS. REAL IMPACT.</p>
+            <h1>
+              Build experiences
+              <br />
+              that bring ideas
+              <br />
+              <span>to life.</span>
+            </h1>
+            <p className="innovation-hero__intro">
+              Hackathons, speakers, and collaborative research. <br />
+              Good people, making meaningful progress.
+            </p>
+            <div className="innovation-hero__actions">
+              <a className="button button--primary" href="/contact">
+                Plan a program{" "}
+                <svg
+                  className="plan-arrow"
+                  aria-hidden="true"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                >
+                  <path d="M4 12h15m-6-6 6 6-6 6" />
+                </svg>
+              </a>
+              <a className="hero-work-link" href="/work">
+                Explore our work
+              </a>
+            </div>
+            <p className="innovation-hero__signature">
+              A brighter tomorrow.
+              <br />
+              Built together.
+            </p>
+          </div>
+          <figure className="innovation-hero__photo">
+            <Image
+              src="/images/site/cleaned.png"
+              alt="Participants collaborating at the Deep Learning Codefest"
+              width={1400}
+              height={1100}
+              sizes="(max-width: 700px) 100vw, 60vw"
+              priority
+            />
+            <figcaption>Ideas find their people here.</figcaption>
+          </figure>
         </div>
-        <p className="hero__proof">
-          National and international experience <span>·</span> Physical, hybrid and online
-        </p>
-      </Container>
-    </section>
-
-    <section className="credibility-strip">
-      <Container>
-        <p>Built from experience across national and international hackathons.</p>
-        <div className="audience-strip">
-          {audiences.map((audience) => (
-            <span key={audience}>{audience}</span>
+      </section>
+      <section id="what-we-do" className="section container">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">01 / WHAT WE DO</p>
+          <h2>
+            Three ways to
+            <br />
+            <em>move things forward.</em>
+          </h2>
+          <p>
+            Find your people.
+            <br />
+            Make something that matters.
+          </p>
+        </div>
+        <div className="pillar-grid">
+          {pillars.map((item, i) => (
+            <a className="pillar" href={`/${item.slug}`} key={item.slug}>
+              <div className="pillar-photo">
+                <Image
+                  width={1400}
+                  height={850}
+                  src={item.image}
+                  alt={item.alt}
+                  loading="lazy"
+                />
+                <span>0{i + 1}</span>
+              </div>
+              <h3>{item.title}</h3>
+              <p>
+                {
+                  [
+                    "From a spark of an idea to a room full of builders.",
+                    "Fresh perspectives. Meaningful connections.",
+                    "Big questions. Shared experiments. Practical progress.",
+                  ][i]
+                }
+              </p>
+              <span className="pillar-link">
+                Explore{" "}
+                {i === 0
+                  ? "programs"
+                  : i === 1
+                    ? "the community"
+                    : "collaboration"}{" "}
+              </span>
+            </a>
           ))}
         </div>
-      </Container>
-    </section>
-
-    <section className="section why-section"><Container><div className="why-grid"><div><SectionHeader index="01 /" eyebrow="WHY IT WORKS" title="A great hackathon is designed long before the opening ceremony." /><p className="large-copy">The room may come alive over one weekend, but the work begins much earlier. A clear purpose, useful problem statements, the right participants, prepared mentors, reliable operations and a fair judging process all shape the result.</p><ol className="outcome-lines"><li>People know why they are there.</li><li>Partners know what success looks like.</li><li>Promising ideas have somewhere to go next.</li></ol></div><MediaFrame {...hackathons[0].gallery[1]} /></div></Container></section>
-
-    <section className="section process-section" id="process"><Container><div className="process-top"><SectionHeader index="02 /" eyebrow="OUR PROCESS" title="One team across the whole event." /><p>A clear thread connects the brief, the people, the production and what happens next.</p></div><ProcessTimeline /><TextLink href="/services">Explore our services</TextLink></Container></section>
-
-    <section className="section work-section"><Container><SectionHeader index="03 /" eyebrow="SELECTED WORK" title="Built with people, pressure and a clear purpose." />{hackathons.map((project, index) => <CaseStudyPreview key={project.slug} project={project} index={index} />)}<ButtonLink href="/work" variant="secondary">View all work</ButtonLink></Container></section>
-
-    <section className="section showreel-section"><Container><SectionHeader index="04 /" eyebrow="IN THE ROOM" title="See the room come alive." intro="Teams building, mentors guiding and ideas reaching the stage." /><VideoLightbox src={siteConfig.showreel.videoSrc} poster={siteConfig.showreel.posterSrc} caption={siteConfig.showreel.caption} placeholder={siteConfig.showreel.placeholder} /></Container></section>
-
-    <section className="section services-section"><Container><SectionHeader index="05 /" eyebrow="WHAT WE DO" title="Hackathons first. The support around them when it matters." /><div className="services-layout"><article className="flagship-service"><p className="eyebrow">FLAGSHIP SERVICE</p><h3>{services[0].title}</h3><p>{services[0].description}</p><TextLink href="/services">See complete delivery</TextLink><div className="flagship-service__stamp" aria-hidden="true">BRIEF<br />↓<br />DEMO</div></article><div className="secondary-services">{services.slice(1).map((service, index) => <article key={service.title}><span>0{index + 2}</span><div><h3>{service.title}</h3><p>{service.description}</p></div></article>)}</div></div></Container></section>
-
-    <section className="section audiences-section"><Container><SectionHeader title="Designed around the institution. Built for the people in the room." /><ol className="audience-list">{audienceDetails.map(([title, description], index) => <li key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></li>)}</ol></Container></section>
-
-    <section className="section engagement-section"><Container><div className="engagement-grid"><div><SectionHeader title="Choose how closely we work together." /><p>Start with experienced guidance, share the production or place the complete program with one team.</p><ButtonLink href="/contact" variant="secondary">Discuss the right model</ButtonLink></div><EngagementModels /></div></Container></section>
-
-    {testimonials.length > 0 && <section className="section"><Container><blockquote>{testimonials[0].quote}</blockquote><p>{testimonials[0].name}, {testimonials[0].institution}</p></Container></section>}
-
-    <section className="section faq-section"><Container><div className="faq-grid"><SectionHeader title="Questions institutions usually ask." /><FAQAccordion /></div></Container></section>
-    <FinalCTA />
-  </main>;
+      </section>
+      <section className="featured-event">
+        <div className="container">
+          <Image
+            width={1400}
+            height={850}
+            src="/images/site/lifeline-hero.jpg"
+            alt="Nepal landscape, the setting for Lifeline Nepal"
+            loading="lazy"
+          />
+          <div>
+            <p className="eyebrow">ON THE HORIZON / HACKATHON</p>
+            <h2>
+              Build for the moments
+              <br />
+              that matter most.
+            </h2>
+            <p>
+              Lifeline Nepal brings builders together to explore disaster
+              response and resilience.
+            </p>
+            <a className="button button--secondary" href="/upcoming">
+              Explore Lifeline Nepal
+            </a>
+          </div>
+        </div>
+      </section>
+      <section className="section container selected-work-home">
+        <div className="editorial-section-heading">
+          <p className="eyebrow">SELECTED WORK</p>
+          <h2>
+            Ideas built.
+            <br />
+            <em>Experiences shared.</em>
+          </h2>
+          <a className="inline-link" href="/work">
+            Explore all our work
+          </a>
+        </div>
+        <div className="selected-work-home__grid">
+          {[...hackathons]
+            .filter(
+              (project) =>
+                project.slug.includes("perceptron") ||
+                project.slug === "turboline-hackathon-2025",
+            )
+            .sort((a, b) => Number(b.year) - Number(a.year))
+            .map((project) => (
+              <a
+                className="selected-work-home__item"
+                key={project.slug}
+                href={`/work/${project.slug}`}
+              >
+                <Image
+                  src={project.coverImage.src!}
+                  alt={project.coverImage.alt}
+                  width={1000}
+                  height={650}
+                />
+                <p className="eyebrow">
+                  {project.year} · {project.format}
+                </p>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+              </a>
+            ))}
+        </div>
+      </section>
+      <EngagementModels />
+      <section className="join-band container">
+        <p>Better, together.</p>
+        <a href="/partners">Become a partner</a>
+        <a href="/sponsors">Support an initiative</a>
+      </section>
+      <FinalCTA />
+    </main>
+  );
 }

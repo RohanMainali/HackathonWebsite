@@ -5,9 +5,18 @@ export async function POST(request: Request) {
     const raw = await request.json();
     const parsed = contactSchema.safeParse(raw);
     if (!parsed.success) {
-      return Response.json({ message: "Please review the highlighted fields.", errors: parsed.error.flatten().fieldErrors }, { status: 400 });
+      return Response.json(
+        {
+          message: "Please review the highlighted fields.",
+          errors: parsed.error.flatten().fieldErrors,
+        },
+        { status: 400 },
+      );
     }
-    if (parsed.data.website) return Response.json({ message: "Thanks. Your inquiry has been received." });
+    if (parsed.data.website)
+      return Response.json({
+        message: "Thanks. Your inquiry has been received.",
+      });
 
     const apiKey = process.env.RESEND_API_KEY;
     const to = process.env.CONTACT_TO_EMAIL;
@@ -15,22 +24,46 @@ export async function POST(request: Request) {
     if (!apiKey || !to || !from) {
       if (process.env.NODE_ENV === "development") {
         console.info("[contact demo mode]", parsed.data);
-        return Response.json({ message: "Demo mode: your inquiry was validated successfully, but email delivery is not configured." });
+        return Response.json({
+          message:
+            "Demo mode: your inquiry was validated successfully, but email delivery is not configured.",
+        });
       }
-      return Response.json({ message: "Email delivery is not configured. Please use the direct email address instead." }, { status: 503 });
+      return Response.json(
+        {
+          message:
+            "Email delivery is not configured. Please use the direct email address instead.",
+        },
+        { status: 503 },
+      );
     }
 
     const safe = (value?: string | null) =>
-      value ? value.replace(/[&<>'"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char] || char) : "Not specified";
+      value
+        ? value.replace(
+            /[&<>'"]/g,
+            (char) =>
+              ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                "'": "&#39;",
+                '"': "&quot;",
+              })[char] || char,
+          )
+        : "Not specified";
     const data = parsed.data;
     const email = await fetch("https://api.resend.com/emails", {
       method: "POST",
-      headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         from,
         to: [to],
         reply_to: data.email,
-        subject: `Inquiry from ${data.organization || data.fullName}`,
+        subject: `Inquiry from ${data.organization || data.fullName || data.email}`,
         html: `<h1>New inquiry received</h1>
 <p><strong>Name:</strong> ${safe(data.fullName)}</p>
 <p><strong>Email:</strong> ${safe(data.email)}</p>
@@ -48,9 +81,25 @@ export async function POST(request: Request) {
 <p>${safe(data.description).replace(/\n/g, "<br>")}</p>`,
       }),
     });
-    if (!email.ok) return Response.json({ message: "We could not send your inquiry. Please try again or use the direct email address." }, { status: 502 });
-    return Response.json({ message: "Thank you. Your inquiry has been sent and the team will respond using your email." });
+    if (!email.ok)
+      return Response.json(
+        {
+          message:
+            "We could not send your inquiry. Please try again or use the direct email address.",
+        },
+        { status: 502 },
+      );
+    return Response.json({
+      message:
+        "Thank you. Your inquiry has been sent and the team will respond using your email.",
+    });
   } catch {
-    return Response.json({ message: "We could not process this request. Please check the form and try again." }, { status: 400 });
+    return Response.json(
+      {
+        message:
+          "We could not process this request. Please check the form and try again.",
+      },
+      { status: 400 },
+    );
   }
 }

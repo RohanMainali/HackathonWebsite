@@ -1,19 +1,19 @@
-import { PartnerForm } from "@/components/forms/CollaborationForms";
-export const metadata = { title: "Become a Partner" };
+import { InquiryFlow } from "@/components/forms/InquiryFlow";
+export const metadata = { title: "Technology with a purpose." };
 export default function Page() {
   return (
     <main id="main-content">
       <section className="detail-hero container compact">
         <p className="eyebrow">LET’S WORK TOGETHER</p>
-        <h1>Become a Partner</h1>
+        <h1>Technology with a purpose.</h1>
         <p>
-          For institutions, research organizations and communities. Start with
-          the interests we share.
+          Focused AI and technology consulting, from exploring an opportunity to
+          building a practical prototype.
         </p>
       </section>
       <section className="container inquiry-layout section">
         <aside>
-          <p className="eyebrow">WHY PARTNER WITH AMATRIX LABS?</p>
+          <p className="eyebrow">A SHARED STARTING POINT</p>
           <h2>
             Good people.
             <br />
@@ -31,7 +31,7 @@ export default function Page() {
             contact@amatrixlabs.com
           </a>
         </aside>
-        <PartnerForm />
+        <InquiryFlow kind="technology" />
       </section>
     </main>
   );

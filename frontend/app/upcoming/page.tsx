@@ -173,7 +173,7 @@ export default function UpcomingHackathonPage() {
               <a href="https://www.amatrixlabs.com/" target="_blank" rel="noreferrer">Amatrix Labs</a> is bringing together builders, responders and problem-solvers for a 48-hour sprint focused on practical technology for the first 72 hours after a flood, landslide or related disaster.
             </p>
             <div className="cta-row">
-              <ButtonLink href="/contact" variant="primary">Get event updates</ButtonLink>
+              <ButtonLink href="/hackathons?intent=Participate%20in%20an%20event&event=Lifeline%20Nepal#start" variant="primary">Register interest</ButtonLink>
               <a className="lifeline-hero__text-link" href="#challenge">Read the challenge <span aria-hidden="true">↓</span></a>
             </div>
             <p className="lifeline-hero__proof">48-hour prototype sprint <span>·</span> Teams of 3–5 <span>·</span> Registration opening soon</p>
@@ -360,8 +360,8 @@ export default function UpcomingHackathonPage() {
           <h2>Bring a problem, a team, field experience or pilot opportunity.</h2>
           <p>Participant, responder, university, technology and funding partners can join the announcement list now. Registration, venue details and the final challenge brief will be released in the next event update.</p>
           <div className="cta-row">
-            <ButtonLink href="/contact" variant="primary">Get event updates</ButtonLink>
-            <ButtonLink href="/partners" variant="secondary">Explore partnership roles</ButtonLink>
+            <ButtonLink href="/hackathons?intent=Participate%20in%20an%20event&event=Lifeline%20Nepal#start" variant="primary">Register interest</ButtonLink>
+            <ButtonLink href="/sponsors?event=Lifeline%20Nepal" variant="secondary">Sponsor this event</ButtonLink>
           </div>
           <small>Presented by Amatrix Labs · Kathmandu, Nepal · Early 2027 · Registration opening soon</small>
         </Container>

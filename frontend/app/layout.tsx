@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./redesign.css";
+import "./editorial.css";
 import { siteConfig } from "@/content/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -7,8 +9,8 @@ import { SkipLink } from "@/components/layout/SkipLink";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
-  title: { default: `${siteConfig.name}: End-to-End Hackathon Strategy and Production`, template: `%s | ${siteConfig.name}` },
-  description: `${siteConfig.name} helps universities, companies and institutions design and run successful hackathons, innovation programs, bootcamps, mentorship initiatives and AI projects.`,
+  title: { default: `${siteConfig.name}: Ideas, People & Innovation`, template: `%s | ${siteConfig.name}` },
+  description: siteConfig.description,
   icons: { icon: { url: "/favicon.png", type: "image/png" }, shortcut: "/favicon.png" },
   manifest: "/manifest.webmanifest",
 };

@@ -6,7 +6,7 @@ export function VideoLightbox({ src, poster, caption, placeholder = false }: { s
   }
 
   return <figure className="showreel-video">
-    <video src={src} poster={poster} autoPlay muted loop playsInline preload="metadata" aria-label={caption} />
+    <video src={src} poster={poster} controls muted playsInline preload="metadata" aria-label={caption} />
     <figcaption>{caption}</figcaption>
   </figure>;
 }
