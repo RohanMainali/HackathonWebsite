@@ -9,13 +9,6 @@ export type Partner = {
 
 export const partners: Partner[] = [
   {
-    name: "IIMS College",
-    category: "Host & Title Sponsor",
-    contribution: "Campus venue, academic hosting, and event title sponsorship",
-    description: "Academic host and title sponsor providing campus venue infrastructure, institutional facilities, and student community coordination for flagship hackathon editions.",
-    logo: "",
-  },
-  {
     name: "Turboline AI",
     category: "Resource, Prize & Challenge Partner",
     contribution: "GPU compute resources, AI credits, prize pool funding, and sports/media challenge statements",
@@ -39,12 +32,6 @@ export const partners: Partner[] = [
 ];
 
 export const sponsorshipRoles = [
-  {
-    title: "Host & Title Sponsor",
-    partner: "IIMS College",
-    details: "Provided campus infrastructure, keynote auditoriums, high-bandwidth networks, and foundational title sponsorship.",
-    badge: "Title Host",
-  },
   {
     title: "Resource & AI Compute Partners",
     partner: "Turboline AI & Perceptron AI",
@@ -70,5 +57,4 @@ export const sponsorshipRoles = [
     badge: "Merch & Gear",
   },
 ];
-
 

@@ -1,0 +1,73 @@
+.sponsor-history {
+  padding-block: 64px 80px;
+  border-top: 1px solid var(--line);
+}
+.sponsor-history-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-bottom: 24px;
+}
+.sponsor-history-grid article {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+.sponsor-wordmark {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+.sponsor-wordmark > span {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.sponsor-wordmark h3 {
+  font-size: clamp(28px, 3vw, 38px);
+}
+.sponsor-history-grid .people-label {
+  margin-bottom: 12px;
+}
+.sponsor-opportunities .people-section-heading > p:last-child {
+  max-width: 580px;
+}
+.sponsor-next {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  padding-block: 70px;
+  border-bottom: 1px solid var(--line);
+}
+.sponsors-page .people-form-section {
+  align-items: start;
+}
+.sponsors-page .people-steps {
+  margin-top: 36px;
+}
+.sponsors-page .sponsor-direct {
+  margin-top: 32px;
+}
+.sponsors-page .collaboration-form {
+  border: 1px solid var(--line);
+  background: var(--paper-bright);
+}
+.sponsors-page .collaboration-form .optional-details {
+  margin-block: 24px;
+}
+@media (max-width: 760px) {
+  .sponsor-history-grid,
+  .sponsor-next {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sponsor-history {
+    padding-block: 44px;
+  }
+  .sponsor-wordmark {
+    min-height: 0;
+  }
+  .sponsor-next {
+    padding-block: 44px;
+  }
+}

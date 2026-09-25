@@ -31,7 +31,12 @@ const programTypes = [
   "Open exploration / Not decided",
 ];
 
-const formats = ["In-person (Onsite)", "Hybrid", "Online / Virtual", "Flexible / Not decided"];
+const formats = [
+  "In-person (Onsite)",
+  "Hybrid",
+  "Online / Virtual",
+  "Flexible / Not decided",
+];
 
 const serviceOptions = [
   "End-to-End hackathon production",
@@ -52,7 +57,9 @@ export function ContactForm() {
 
   function toggleService(service: string) {
     setSelectedServices((prev) =>
-      prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]
+      prev.includes(service)
+        ? prev.filter((s) => s !== service)
+        : [...prev, service],
     );
   }
 
@@ -62,7 +69,10 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const data = new FormData(form);
-    const payload = Object.fromEntries(data.entries()) as Record<string, unknown>;
+    const payload = Object.fromEntries(data.entries()) as Record<
+      string,
+      unknown
+    >;
 
     payload.services = selectedServices;
 
@@ -73,10 +83,17 @@ export function ContactForm() {
         body: JSON.stringify(payload),
       });
 
-      const result = (await response.json()) as { message?: string; errors?: Record<string, string[]> };
+      const result = (await response.json()) as {
+        message?: string;
+        errors?: Record<string, string[]>;
+      };
 
       if (!response.ok) {
-        setState({ status: "error", message: result.message, errors: result.errors });
+        setState({
+          status: "error",
+          message: result.message,
+          errors: result.errors,
+        });
         return;
       }
 
@@ -109,7 +126,7 @@ export function ContactForm() {
           style={{ marginTop: "24px" }}
           onClick={() => setState({ status: "idle" })}
         >
-          Send another inquiry <span aria-hidden="true">→</span>
+          Send another inquiry
         </button>
       </div>
     );
@@ -217,7 +234,9 @@ export function ContactForm() {
       {/* 03. Services of Interest */}
       <div className="form-section-group" style={{ marginTop: "36px" }}>
         <h4 className="form-section-title">03 / Services of Interest</h4>
-        <p className="form-group-helper">Select any areas you would like assistance with.</p>
+        <p className="form-group-helper">
+          Select any areas you would like assistance with.
+        </p>
         <div className="services-chip-grid">
           {serviceOptions.map((service) => {
             const isChecked = selectedServices.includes(service);
@@ -252,9 +271,14 @@ export function ContactForm() {
             rows={5}
             placeholder="Describe your event concept, objectives, expected audience, or specific questions for our team..."
             aria-invalid={!!error("description")}
-            aria-describedby={error("description") ? "description-error" : "description-hint"}
+            aria-describedby={
+              error("description") ? "description-error" : "description-hint"
+            }
           />
-          <small id="description-hint">The brief does not need to be finalized. A few sentences are enough to begin.</small>
+          <small id="description-hint">
+            The brief does not need to be finalized. A few sentences are enough
+            to begin.
+          </small>
           {error("description") && (
             <small id="description-error" className="field-error">
               {error("description")}
@@ -264,7 +288,11 @@ export function ContactForm() {
       </div>
 
       {state.message && state.status === "error" && (
-        <div className="form-status form-status--error" role="alert" style={{ marginTop: "20px" }}>
+        <div
+          className="form-status form-status--error"
+          role="alert"
+          style={{ marginTop: "20px" }}
+        >
           {state.message}
         </div>
       )}
@@ -275,11 +303,13 @@ export function ContactForm() {
           type="submit"
           disabled={state.status === "loading"}
         >
-          <span>{state.status === "loading" ? "Sending inquiry..." : "Send inquiry"}</span>
-          <span aria-hidden="true" className="button__arrow">→</span>
+          <span>
+            {state.status === "loading" ? "Sending inquiry..." : "Send inquiry"}
+          </span>
         </button>
         <p className="form-privacy-note">
-          We respect your privacy and will only use this information to respond to your inquiry.
+          We respect your privacy and will only use this information to respond
+          to your inquiry.
         </p>
       </div>
     </form>
@@ -382,4 +412,3 @@ function SelectField({
     </label>
   );
 }
-

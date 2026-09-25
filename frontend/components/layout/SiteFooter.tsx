@@ -1,77 +1,18 @@
 import Image from "next/image";
-import { siteConfig } from "@/content/site";
+
+const groups = [
+  { title: "Programs", links: [["Hackathons", "/hackathons"], ["Research & Innovation", "/research"], ["Speakers", "/speakers"], ["Community", "/community"]] },
+  { title: "Get involved", links: [["Join a Program", "/participate"], ["Become a Speaker", "/speakers#start"], ["Become a Partner", "/partners#partner"], ["Become a Sponsor", "/sponsors"]] },
+  { title: "Amatrix", links: [["About", "/about"], ["Work", "/work"], ["Contact", "/contact"]] },
+  { title: "Connect", links: [["LinkedIn", "https://www.linkedin.com/company/amatrix-labs/"], ["Instagram", "https://www.instagram.com/amatrixlabs/"], ["Email", "mailto:contact@amatrixlabs.com"]] },
+];
+
 export function SiteFooter() {
-  const socials = Object.entries(siteConfig.socials).filter(([, href]) => href);
-  return (
-    <footer className="studio-footer">
-      <div className="container">
-        <div className="studio-footer__lead">
-          <div>
-            <p className="eyebrow">
-              THE NEXT GOOD IDEA STARTS WITH A CONVERSATION.
-            </p>
-            <h2>
-              Let’s make
-              <br />
-              <em>something matter.</em>
-            </h2>
-          </div>
-          <a
-            className="footer-email"
-            href={`mailto:${siteConfig.contact.email}`}
-          >
-            {siteConfig.contact.email}
-          </a>
-        </div>
-        <div className="studio-footer__main">
-          <div className="studio-footer__brand">
-            <a href="/" aria-label="AMatrix Labs home">
-              <Image
-                src="/images/site/logo.webp"
-                alt="AMatrix Labs"
-                width={1421}
-                height={278}
-              />
-            </a>
-            <p>
-              People, ideas, and possibilities.
-              <br />
-              Brought together in Nepal.
-            </p>
-            <span>{siteConfig.contact.location}</span>
-          </div>
-          <nav aria-label="Explore our programs">
-            <h3>Explore</h3>
-            <a href="/hackathons">Ideathon & Hackathon</a>
-            <a href="/speakers">Speakers & Community</a>
-            <a href="/research">Research & Innovation</a>
-            <a href="/technology">AI & Technology</a>
-          </nav>
-          <nav aria-label="Get involved">
-            <h3>Get involved</h3>
-            <a href="/upcoming">Upcoming events</a>
-            <a href="/partners">Become a partner</a>
-            <a href="/sponsors">Become a sponsor</a>
-            <a href="/contact">Work with us</a>
-          </nav>
-          <nav aria-label="About AMatrix Labs">
-            <h3>AMatrix Labs</h3>
-            <a href="/about">Our people</a>
-            <a href="/work">Selected work</a>
-            <a href="/contact">Contact</a>
-            {socials.map(([name, href]) => (
-              <a href={href} key={name} target="_blank" rel="noreferrer">
-                {name}
-              </a>
-            ))}
-          </nav>
-        </div>
-        <div className="studio-footer__bottom">
-          <span>© {new Date().getFullYear()} AMatrix Labs</span>
-          <span>Ideas. People. Real impact.</span>
-          <a href="/privacy">Privacy policy</a>
-        </div>
-      </div>
-    </footer>
-  );
+  return <footer className="new-footer">
+    <div className="site-shell new-footer__top">
+      <div className="new-footer__brand"><Image src="/images/site/logo.webp" alt="Amatrix Labs" width={1421} height={278} /><p>People, ideas, and technology<br />moving forward from Nepal.</p></div>
+      {groups.map((group) => <nav key={group.title} aria-label={group.title}><h3>{group.title}</h3>{group.links.map(([label, href]) => <a href={href} key={label}>{label}</a>)}</nav>)}
+    </div>
+    <div className="site-shell new-footer__bottom"><span>© 2026 Amatrix Labs</span><span>Kathmandu, Nepal</span><a href="/privacy">Privacy</a></div>
+  </footer>;
 }
