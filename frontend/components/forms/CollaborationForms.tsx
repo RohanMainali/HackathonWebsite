@@ -31,14 +31,22 @@ const sponsorSupport = [
   "Infrastructure",
 ];
 
-export function PartnerForm() {
-  return <CollaborationForm type="partner" />;
+export function PartnerForm({ partnershipType }: { partnershipType?: string }) {
+  return <CollaborationForm type="partner" partnershipType={partnershipType} />;
 }
-export function SponsorForm() {
-  return <CollaborationForm type="sponsor" />;
+export function SponsorForm({ initiative = "" }: { initiative?: string }) {
+  return <CollaborationForm type="sponsor" initiative={initiative} />;
 }
 
-function CollaborationForm({ type }: { type: "partner" | "sponsor" }) {
+function CollaborationForm({
+  type,
+  partnershipType,
+  initiative = "",
+}: {
+  initiative?: string;
+  type: "partner" | "sponsor";
+  partnershipType?: string;
+}) {
   const sponsor = type === "sponsor";
   const [tags, setTags] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
@@ -56,10 +64,14 @@ function CollaborationForm({ type }: { type: "partner" | "sponsor" }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          fullName: values.fullName,
           email: values.email,
           organization: values.organization,
           services: tags,
-          programType: `Become a ${type}`,
+          programType: partnershipType
+            ? `${partnershipType} enquiry`
+            : `Become a ${type}`,
+          organizationType: partnershipType,
           description: [
             values.description,
             values.initiative ? `Initiative: ${values.initiative}` : "",
@@ -111,13 +123,35 @@ function CollaborationForm({ type }: { type: "partner" | "sponsor" }) {
       <p className="eyebrow">
         {sponsor ? "SPONSORSHIP ENQUIRY" : "PARTNERSHIP ENQUIRY"}
       </p>
-      <h2>Become a {type}.</h2>
+      <h2>
+        {partnershipType ? `${partnershipType} enquiry.` : `Become a ${type}.`}
+      </h2>
       <p>
         {sponsor
           ? "Choose how you’d like to support an initiative."
           : "Tell us where our interests meet."}{" "}
         An email and a short note are enough to start.
       </p>
+      {sponsor && (
+        <>
+          <label className="flow-field">
+            <span>Your name (optional)</span>
+            <input name="fullName" autoComplete="name" />
+          </label>
+          <label className="flow-field">
+            <span>Organization (optional)</span>
+            <input name="organization" autoComplete="organization" />
+          </label>
+          <label className="flow-field">
+            <span>Event or initiative</span>
+            <select name="initiative" defaultValue={initiative}>
+              <option value="">Help me choose</option>
+              <option value="Lifeline Nepal">Lifeline Nepal · 2027</option>
+              <option>A future initiative</option>
+            </select>
+          </label>
+        </>
+      )}
       <div className="collaboration-contact collaboration-contact--simple">
         <label className="flow-field">
           <span>Email *</span>
@@ -168,18 +202,10 @@ function CollaborationForm({ type }: { type: "partner" | "sponsor" }) {
         <summary>
           Provide more details <span>(optional)</span>
         </summary>
-        <label className="flow-field">
-          <span>Organization (optional)</span>
-          <input name="organization" autoComplete="organization" />
-        </label>{" "}
-        {sponsor && (
+        {!sponsor && (
           <label className="flow-field">
-            <span>Event or initiative (optional)</span>
-            <select name="initiative" defaultValue="">
-              <option value="">Help me choose</option>
-              <option>Lifeline Nepal</option>
-              <option>A future initiative</option>
-            </select>
+            <span>Organization (optional)</span>
+            <input name="organization" autoComplete="organization" />
           </label>
         )}
         <fieldset className="collaboration-interests">

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { ParticipateDropdown } from "@/components/navigation/ParticipateDropdown";
 import { navigation } from "@/content/navigation";
 
 export function MobileNavigation() {
@@ -14,9 +15,11 @@ export function MobileNavigation() {
     const trigger = buttonRef.current;
     document.body.style.overflow = "hidden";
     const focusables =
-      panelRef.current?.querySelectorAll<HTMLElement>("a, button");
+      panelRef.current?.querySelectorAll<HTMLElement>("a, button, summary");
     focusables?.[0]?.focus();
     const onKey = (event: KeyboardEvent) => {
+      const focusables =
+        panelRef.current?.querySelectorAll<HTMLElement>("a, button, summary");
       if (event.key === "Escape") setOpen(false);
       if (event.key === "Tab" && focusables?.length) {
         const first = focusables[0];
@@ -66,24 +69,30 @@ export function MobileNavigation() {
             aria-label="Navigation menu"
           >
             <nav aria-label="Mobile navigation">
-              {navigation.map((item, index) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                >
-                  <span>0{index + 1}</span>
-                  {item.label}
-                </a>
-              ))}
+              {navigation.map((item) =>
+                item.href === "/participate" ? (
+                  <ParticipateDropdown
+                    key={item.href}
+                    onNavigate={() => setOpen(false)}
+                  />
+                ) : (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ),
+              )}
+              <a
+                className="mobile-nav__contact"
+                href="/participate"
+                onClick={() => setOpen(false)}
+              >
+                Get involved
+              </a>
             </nav>
-            <a
-              className="button button--primary"
-              href="/contact"
-              onClick={() => setOpen(false)}
-            >
-              Work With Us
-            </a>
           </div>,
           document.body,
         )}

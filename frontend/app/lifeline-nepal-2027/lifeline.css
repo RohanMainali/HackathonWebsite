@@ -1,0 +1,28 @@
+.lifeline-year {
+  display: block;
+  font-size: 0.5em;
+  color: var(--ink-soft);
+  margin-top: 0.35em;
+}
+.lifeline-registration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 88px);
+  padding-block: clamp(56px, 7vw, 100px);
+  scroll-margin-top: 110px;
+}
+.lifeline-registration h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+.lifeline-registration > div > p:not(.eyebrow) {
+  color: var(--ink-soft);
+  max-width: 52ch;
+  line-height: 1.7;
+}
+@media (max-width: 760px) {
+  .lifeline-registration {
+    grid-template-columns: 1fr;
+  }
+}

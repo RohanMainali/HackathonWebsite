@@ -4,46 +4,56 @@ import { InquiryFlow } from "@/components/forms/InquiryFlow";
 export function PillarPage({ slug }: { slug: string }) {
   const item = pillars.find((p) => p.slug === slug)!;
   return (
-    <main id="main-content">
-      <section className="detail-hero container">
-        <p className="eyebrow">{item.title}</p>
-        <h1>{item.headline}</h1>
-        <p>{item.copy}</p>
-        <a className="button button--primary" href="#start">
-          {item.actions[0]}
-        </a>
-        <Image width={1400} height={850} src={item.image} alt={item.alt} />
+    <main id="main-content" className="design-page">
+      <section className="capability-hero content-width">
+        <div>
+          <p className="eyebrow">{item.title}</p>
+          <h1>{item.headline}</h1>
+          <p>{item.copy}</p>
+          <a className="button button--primary" href="#start">
+            {item.actions[0]}
+          </a>
+        </div>
+        <Image
+          src={item.image}
+          alt={item.alt}
+          width={1000}
+          height={1000}
+          priority
+          sizes="(max-width: 700px) 100vw, 50vw"
+        />
       </section>
-      <section className="workflow container" aria-label="How we work">
-        {item.workflow.map((s, i) => (
-          <div key={s}>
+      <section className="process-strip content-width" aria-label="How we work">
+        {item.workflow.map((step, i) => (
+          <div key={step}>
             <span>0{i + 1}</span>
-            {s}
-            {i < 4 && <b aria-hidden="true">→</b>}
+            <h2>{step}</h2>
           </div>
         ))}
       </section>
-      <section className="section container inquiry-layout" id="start">
+      {slug === "hackathons" && (
+        <div className="event-notice content-width">
+          <div>
+            <p className="eyebrow">UPCOMING / EARLY 2027</p>
+            <h2>Lifeline Nepal</h2>
+            <p>A 48-hour disaster response and resilience hackathon.</p>
+          </div>
+          <a className="button button--secondary" href="/lifeline-nepal-2027">
+            Explore the event
+          </a>
+        </div>
+      )}
+      <section className="design-form-section content-width" id="start">
         <div>
-          <p className="eyebrow">YOUR NEXT STEP</p>
+          <p className="eyebrow">LET’S GET STARTED</p>
           <h2>
-            Let’s make
+            A good idea
             <br />
-            something happen.
+            deserves a conversation.
           </h2>
           <p>Choose a direction. We’ll work out the details together.</p>
-          {slug === "hackathons" && (
-            <>
-              <a className="inline-link" href="/upcoming">
-                Explore upcoming events
-              </a>
-              <a className="inline-link" href="/sponsors">
-                Sponsor an event
-              </a>
-            </>
-          )}
-          <a className="inline-link" href="/partners">
-            Partner with us
+          <a className="editorial-link" href="/partners">
+            Explore a partnership
           </a>
         </div>
         <InquiryFlow kind={slug} />
