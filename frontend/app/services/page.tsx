@@ -12,7 +12,7 @@ export default function Page() {
         title="Your ambition. Our shared project."
         description="Connect with talent, explore a challenge, or build a community. We design and deliver programs that bring people and purpose together."
       >
-        <a className="button button--primary" href="/contact">
+        <a className="button button--primary" href="/contact/services">
           Discuss a project
         </a>
       </PageIntro>
@@ -36,7 +36,7 @@ export default function Page() {
         ))}
       </section>
       <EngagementModels />
-      <FinalCTA />
+      <FinalCTA href="/contact/services" />
     </main>
   );
 }

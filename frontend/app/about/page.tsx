@@ -1,4 +1,5 @@
 import Image from "next/image";
+import "./about.css";
 import { PageIntro } from "@/components/design/PageIntro";
 import { TeamDirectory } from "@/components/sections/TeamDirectory";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -67,6 +68,10 @@ export default function Page() {
           </article>
         ))}
       </section>
+      <section className="mission-vision content-width" aria-label="Mission and vision">
+        <article><h2>Our Mission</h2><h3>Turn knowledge into action.</h3><p>Connect academic institutions, industry, and communities through events that help people learn practical skills, share expertise, and build solutions to real problems.</p></article>
+        <article><h2>Our Vision</h2><h3>Opportunity through shared knowledge.</h3><p>A connected innovation community where every learner can access industry experience and every promising idea has a path from the classroom to real-world impact.</p></article>
+      </section>
       <section className="team-composition content-width">
         <div className="design-section-title">
           <p className="eyebrow">OUR PEOPLE</p>
@@ -74,7 +79,7 @@ export default function Page() {
         </div>
         <TeamDirectory />
       </section>
-      <FinalCTA />
+      <FinalCTA href="/contact/about" />
     </main>
   );
 }

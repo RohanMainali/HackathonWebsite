@@ -398,7 +398,7 @@ export default function LifelineNepalPage() {
             The event is planned for early 2027. Exact dates and venue details
             will be announced. Registering interest does not confirm a place.
           </p>
-          <a className="editorial-link" href="/contact">
+          <a className="editorial-link" href="/contact/lifeline">
             Have a question? Get in touch
           </a>
         </div>

@@ -69,22 +69,7 @@ export function MobileNavigation() {
             aria-label="Navigation menu"
           >
             <nav aria-label="Mobile navigation">
-              {navigation.map((item) =>
-                item.href === "/participate" ? (
-                  <ParticipateDropdown
-                    key={item.href}
-                    onNavigate={() => setOpen(false)}
-                  />
-                ) : (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ),
-              )}
+              {navigation.map((item) => item.href === "/programs" ? <ParticipateDropdown mobile key={item.href} onNavigate={() => setOpen(false)} /> : <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
               <a
                 className="mobile-nav__contact"
                 href="/participate"

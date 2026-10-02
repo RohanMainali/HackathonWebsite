@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/content/site";
+import { contactPages } from "@/content/contact-pages";
 import { hackathons } from "@/content/hackathons";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/community",
     "/participate",
+    "/programs",
     "/lifeline-nepal-2027",
     "/work",
     "/services",
@@ -18,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/partners",
     "/about",
     "/contact",
+    ...Object.keys(contactPages).map((section) => `/contact/${section}`),
     "/privacy",
   ];
   return [

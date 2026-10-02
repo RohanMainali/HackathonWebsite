@@ -68,7 +68,7 @@ export default function PartnersPage() {
             <li>Connect students with industry challenges</li>
             <li>Explore research and campus-led initiatives</li>
           </ul>
-          <a className="people-button" href="#partner">
+          <a className="people-button" href="/contact/academic">
             Let’s connect your campus
           </a>
         </article>
@@ -89,7 +89,7 @@ export default function PartnersPage() {
             <li>Contribute mentorship and technical resources</li>
             <li>Meet builders through their work</li>
           </ul>
-          <a className="people-button" href="#partner">
+          <a className="people-button" href="/contact/industry">
             Let’s involve your team
           </a>
         </article>
