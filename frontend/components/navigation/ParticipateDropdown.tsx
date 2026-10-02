@@ -4,13 +4,15 @@ import { useEffect, useId, useRef, useState } from "react";
 
 export function ParticipateDropdown({
   onNavigate,
+  mobile = false,
 }: {
   onNavigate?: () => void;
+  mobile?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const id = useId();
   const rootRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const linkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     if (!open) return;
@@ -22,7 +24,7 @@ export function ParticipateDropdown({
       if (event.key === "Escape") {
         event.stopPropagation();
         setOpen(false);
-        buttonRef.current?.focus();
+        linkRef.current?.focus();
       }
     }
     root?.addEventListener("keydown", handleKey);
@@ -37,41 +39,21 @@ export function ParticipateDropdown({
     <div
       className="participate-dropdown"
       ref={rootRef}
+      onPointerEnter={(event) => { if (event.pointerType === "mouse") setOpen(true); }}
+      onPointerLeave={(event) => { if (event.pointerType === "mouse") setOpen(false); }}
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
     >
-      <button
-        ref={buttonRef}
-        type="button"
-        aria-expanded={open}
-        aria-controls={id}
-        onClick={() => setOpen(!open)}
-      >
-        Participate
-      </button>
-      {open && (
+      <a ref={linkRef} href="/programs" aria-expanded={mobile || open} aria-controls={id}
+        onFocus={() => setOpen(true)}
+        onKeyDown={(event) => { if (event.key === "ArrowDown") { event.preventDefault(); setOpen(true); } }}
+        onClick={() => { setOpen(false); onNavigate?.(); }}>Programs</a>
+      {(mobile || open) && (
         <div className="participate-dropdown__panel" id={id}>
-          <p>Upcoming hackathon</p>
-          <a
-            href="/lifeline-nepal-2027"
-            onClick={() => {
-              setOpen(false);
-              onNavigate?.();
-            }}
-          >
-            <strong>Lifeline Nepal · 2027</strong>
-            <span>Early 2027 · Register interest</span>
-          </a>
-          <a
-            href="/hackathons"
-            onClick={() => {
-              setOpen(false);
-              onNavigate?.();
-            }}
-          >
-            Explore hackathons
-          </a>
+          <a href="/lifeline-nepal-2027" onClick={() => { setOpen(false); onNavigate?.(); }}>Lifeline Nepal</a>
+          <a href="/programs#sports-analytics-2" onClick={() => { setOpen(false); onNavigate?.(); }}>Sports Analytics 2.0</a>
+          <a href="/programs" onClick={() => { setOpen(false); onNavigate?.(); }}>Explore other programs</a>
         </div>
       )}
     </div>

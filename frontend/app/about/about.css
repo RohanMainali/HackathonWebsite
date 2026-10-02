@@ -1,0 +1,39 @@
+.mission-vision {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  padding-block: 56px;
+}
+.mission-vision article {
+  padding: 32px;
+  background: #f2f2eb;
+  border-top: 3px solid #33452e;
+  color: #19231c;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.mission-vision h2 {
+  margin: 0 0 24px;
+  font-family: inherit;
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: normal;
+}
+.mission-vision h3 {
+  margin: 0 0 16px;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+.mission-vision p {
+  margin: 0;
+  color: #303b32;
+  font-size: 18px;
+  line-height: 1.75;
+}
+@media (max-width: 760px) {
+  .mission-vision { grid-template-columns: 1fr; gap: 24px; padding-block: 36px; }
+  .mission-vision article { padding: 24px; }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { contactPages } from "@/content/contact-pages";
 import { pillars } from "@/content/pillars";
 
 const interests = [
@@ -39,7 +40,7 @@ export function InquiryFlow({ kind = "custom" }: { kind?: string }) {
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [errors, setErrors] = useState<Record<string, string[]>>({});
-  const options =
+  const options = contactPages[kind]?.points ?? (
     kind === "partners"
       ? interests
       : kind === "sponsors"
@@ -51,7 +52,7 @@ export function InquiryFlow({ kind = "custom" }: { kind?: string }) {
               "Technical guidance",
               "Custom technology project",
             ]
-          : pillars.find((p) => p.slug === kind)?.actions || [];
+          : pillars.find((p) => p.slug === kind)?.actions || []);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -121,7 +122,7 @@ export function InquiryFlow({ kind = "custom" }: { kind?: string }) {
 
   return (
     <form className="inquiry-flow simple-inquiry" onSubmit={submit}>
-      <h2>Start a conversation.</h2>
+      <h2>{kind === "academic" ? "Plan your campus program." : kind === "industry" ? "Share your industry challenge." : "Start a conversation."}</h2>
       <p>Your email and a few words are all we need.</p>
       <label className="flow-field">
         <span>Email</span>

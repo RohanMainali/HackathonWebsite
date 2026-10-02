@@ -42,7 +42,7 @@ export function OfferingCards({ detailed = false }: { detailed?: boolean }) {
           key={offer.id}
         >
           <a
-            href={detailed ? "/contact" : `/services#${offer.id}`}
+            href={detailed ? "/contact/services" : `/services#${offer.id}`}
             className="offering-card__image"
             aria-label={`Explore ${offer.title}`}
           >
@@ -63,7 +63,7 @@ export function OfferingCards({ detailed = false }: { detailed?: boolean }) {
             )}
             <a
               className="offering-link"
-              href={detailed ? "/contact" : `/services#${offer.id}`}
+              href={detailed ? "/contact/services" : `/services#${offer.id}`}
             >
               {detailed ? "Let’s talk" : "Explore"}
             </a>

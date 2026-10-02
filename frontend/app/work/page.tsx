@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { PageIntro } from "@/components/design/PageIntro";
 import { hackathons } from "@/content/hackathons";
-import { FinalCTA } from "@/components/sections/FinalCTA";
+import { workAudiences } from "@/content/work";
+import "./work.css";
 export const metadata = {
   title: "Our Work",
   description:
@@ -11,11 +12,21 @@ export default function Page() {
   return (
     <main id="main-content" className="design-page">
       <PageIntro
-        label="SELECTED WORK / 2024—2026"
-        title="Made possible, together."
-        description="A few of the challenges, communities, and ideas we’ve helped bring to life."
+        label="OUR WORK"
+        title="Knowledge into action. Ideas into outcomes."
+        description="What we do, how we do it, and the opportunities our events help create for academic institutions and industry."
       />
-      <section className="project-collection content-width">
+      <nav className="work-jump content-width" aria-label="Our Work sections"><a href="#our-work">01 / Our work</a><a href="#approach">02 / Our approach</a></nav>
+      <section id="our-work" className="content-width work-section">
+        <header className="design-section-title"><p className="eyebrow">01 / OUR WORK</p><h2>What we do.</h2><p>Purposeful events that connect learning, people, and real challenges.</p></header>
+        <div className="work-audiences">{workAudiences.map((audience) => <article key={audience.slug}>
+          <h3>{audience.title}</h3><p>{audience.description}</p>
+          <h4>Outcomes we work toward</h4>
+          <ul className="work-outcomes">{audience.outcomes.map(([title, copy]) => <li key={title}><strong>{title}</strong><p>{copy}</p></li>)}</ul>
+          <a className="editorial-link" href={`/contact/${audience.slug}`}>{audience.slug === "academic" ? "Plan a campus program" : "Discuss an industry challenge"} →</a>
+        </article>)}</div>
+        <h3 className="work-project-title">See the work in practice.</h3>
+        <div className="project-collection">
         {[...hackathons]
           .sort((a, b) => Number(b.year) - Number(a.year))
           .map((p, i) => (
@@ -40,8 +51,15 @@ export default function Page() {
               </div>
             </a>
           ))}
+        </div>
       </section>
-      <FinalCTA />
+      <section id="approach" className="content-width work-section">
+        <header className="design-section-title"><p className="eyebrow">02 / OUR APPROACH</p><h2>How we do it.</h2><p>A shared plan, practical preparation, and support beyond event day.</p></header>
+        <div className="work-audiences">{workAudiences.map((audience) => <article key={audience.slug}><h3>{audience.title}</h3>
+          <ol className="work-phases">{audience.phases.map(([title, copy]) => <li key={title}><h4>{title}</h4><p>{copy}</p></li>)}</ol>
+          <a className="editorial-link" href={`/contact/${audience.slug}`}>{audience.slug === "academic" ? "Start an academic partnership" : "Start an industry collaboration"} →</a>
+        </article>)}</div>
+      </section>
     </main>
   );
 }

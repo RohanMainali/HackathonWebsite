@@ -21,9 +21,9 @@ export default function HomePage() {
     <section className="studio-hero site-shell">
       <div className="studio-hero__copy">
         <p className="studio-label">Amatrix Labs / Kathmandu</p>
-        <h1>A place to learn.<br />A community<br /><span>to build with.</span></h1>
+        <h1>Transforming knowledge.<br /><span>One event at a time.</span></h1>
         <p>Programs, communities, and experiences for people building what comes next.</p>
-        <div className="studio-actions"><a className="studio-link studio-link--filled" href="/participate">Explore programs →</a><a className="studio-link" href="/work">See our work</a></div>
+        <div className="studio-actions"><a className="studio-link studio-link--filled" href="/programs">Explore programs →</a><a className="studio-link" href="/work">See our work</a></div>
       </div>
       <figure className="studio-hero__image"><Image src="/images/hackathons/iims-perceptron-2026/mentor-team-collaboration.jpg" alt="A mentor and participants collaborating around laptops at an Amatrix program" fill priority sizes="(max-width: 760px) 100vw, 58vw" /><figcaption>People · Ideas · Technology</figcaption></figure>
     </section>
@@ -46,6 +46,6 @@ export default function HomePage() {
 
     <section className="studio-partnership site-shell"><h2>Have a problem<br />worth solving?</h2><div><p>We work with institutions, organizations, and companies to create programs around meaningful challenges.</p><a className="studio-link studio-link--filled" href="/contact">Start a conversation →</a><a className="studio-link" href="/partners">Become a partner</a></div></section>
 
-    <section className="studio-final"><Image src="/images/hackathons/iims-perceptron-2026/prototype-demonstration.jpg" alt="Participants presenting a working technology prototype" fill sizes="100vw" /><div /><div className="site-shell"><h2>Find your next<br />place to build.</h2><p>Join a program, meet your people, and make something worth sharing.</p><a className="studio-link studio-link--white" href="/participate">Explore opportunities →</a></div></section>
+    <section className="studio-final"><Image src="/images/hackathons/iims-perceptron-2026/prototype-demonstration.jpg" alt="Participants presenting a working technology prototype" fill sizes="100vw" /><div /><div className="site-shell"><h2>Find your next<br />place to build.</h2><p>Join a program, meet your people, and make something worth sharing.</p><a className="studio-link studio-link--white" href="/programs">Explore opportunities →</a></div></section>
   </main>;
 }

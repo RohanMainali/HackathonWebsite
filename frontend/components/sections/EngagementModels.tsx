@@ -18,7 +18,7 @@ export function EngagementModels() {
             ],
             ["Custom", "A working relationship shaped around you."],
           ].map(([name, copy], i) => (
-            <a href={`/contact?intent=${encodeURIComponent(name)}`} key={name}>
+            <a href={`/contact/services?intent=${encodeURIComponent(name)}`} key={name}>
               <span>0{i + 1}</span>
               <h3>{name}</h3>
               <p>{copy}</p>

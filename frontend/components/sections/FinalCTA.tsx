@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/components/ui/ButtonLink";
-export function FinalCTA() {
+export function FinalCTA({ href = "/contact" }: { href?: string }) {
   return (
     <section className="final-cta">
       <div className="container final-cta__inner">
@@ -11,7 +11,7 @@ export function FinalCTA() {
             worth showing?
           </h2>
         </div>
-        <ButtonLink href="/contact" variant="light">
+        <ButtonLink href={href} variant="light">
           Start a conversation
         </ButtonLink>
       </div>

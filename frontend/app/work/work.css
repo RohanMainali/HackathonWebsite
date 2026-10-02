@@ -1,0 +1,16 @@
+.work-jump { display:flex; gap:28px; flex-wrap:wrap; padding-bottom:32px; border-bottom:1px solid #d8d8d0; }
+.work-jump a { text-decoration:underline; text-underline-offset:6px; font-weight:600; }
+.work-section { padding-top:70px; padding-bottom:70px; scroll-margin-top:110px; }
+.work-audiences { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:48px; }
+.work-audiences > article { min-width:0; padding:32px; background:#f2f2eb; }
+.work-audiences h3 { font-size:clamp(25px,3vw,36px); line-height:1.2; margin-bottom:20px; }
+.work-audiences h4 { font-size:18px; margin:24px 0 10px; }
+.work-audiences p { line-height:1.75; margin-bottom:20px; }
+.work-outcomes { padding:0; list-style:none; }
+.work-outcomes li { padding-top:20px; border-top:1px solid #d2d4c8; }
+.work-outcomes strong { font-size:20px; }
+.work-phases { padding-left:25px; }
+.work-phases li { padding-left:10px; }
+.work-phases li::marker { font-weight:700; color:#405334; }
+.work-project-title { margin:70px 0 30px; font-size:30px; }
+@media(max-width:760px) { .work-audiences { grid-template-columns:1fr; gap:24px; } .work-audiences > article { padding:24px; } .work-section { padding-top:45px; padding-bottom:45px; } }

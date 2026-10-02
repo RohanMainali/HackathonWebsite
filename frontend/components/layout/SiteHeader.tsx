@@ -19,15 +19,7 @@ export function SiteHeader() {
           />
         </a>
         <nav className="rebuild-nav" aria-label="Primary navigation">
-          {navigation.map((item) =>
-            item.href === "/participate" ? (
-              <ParticipateDropdown key={item.href} />
-            ) : (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ),
-          )}
+          {navigation.map((item) => item.href === "/programs" ? <ParticipateDropdown key={item.href} /> : <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
         <a className="header-contact" href="/participate">
           Get involved

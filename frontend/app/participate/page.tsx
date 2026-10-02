@@ -185,7 +185,7 @@ export default function ParticipatePage() {
               Bring your energy to community outreach, event support, or a new
               collaboration.
             </p>
-            <a href="/contact">Register your interest</a>
+            <a href="/contact/programs">Register your interest</a>
           </article>
         </div>
       </section>
